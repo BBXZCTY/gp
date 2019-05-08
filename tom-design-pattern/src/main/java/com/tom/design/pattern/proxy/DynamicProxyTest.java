@@ -8,7 +8,8 @@ public class DynamicProxyTest implements InvocationHandler {
 
     private Object targetClass;
 
-    public DynamicProxyTest(Object targetClass) {
+
+    private DynamicProxyTest(Object targetClass) {
         this.targetClass = targetClass;
     }
 
