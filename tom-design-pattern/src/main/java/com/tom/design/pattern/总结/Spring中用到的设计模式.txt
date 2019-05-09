@@ -1,0 +1,10 @@
+工厂模式        只对结果负责，封装创建过程   BeanFactory、Calender
+单例模式        保证独一无二               ApplicationContext、Calender
+原型模式        拔一根猴毛，吹出千万个       ArrayList、PrototypeBean
+代理模式        找人办事，增强职责          ProxyFactoryBean、JdkDynamicAopProxy、CglibAopProxy
+委派模式        干活算你的，功劳是我的       DispatcherServlet、BeanDefinitionParserDelegate
+策略模式        用户选择，结果统一          InstantiationStrategy
+模板模式        流程标准化，自己实现定制     JdbcTemplate、HttpServlet
+适配器模式       兼容转换头                 AdvisorAdapter、HandlerAdapter
+装饰器模式       包装、同宗同源             BufferReader、InputStream、OutputStream、HttpHeadResponseDecorator
+观察者模式       任务完成时通知             ContextLoaderListener
