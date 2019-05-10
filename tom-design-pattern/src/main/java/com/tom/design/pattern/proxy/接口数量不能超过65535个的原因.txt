@@ -1,0 +1,24 @@
+为什么JDK动态代理中要求目标类实现的接口数量不能超过65535个
+
+java.lang.reflect.Proxy.getProxyClass0方法中可以看出
+因为接口个数由2个byte存储，最大支持65535个
+
+接口列表数目不能超过65535,因为在class文件中，这些个数都是用4位16进制表示的，所以最大值是2的16次方-1
+
+附源码：
+
+/**
+ * Generate a proxy class.  Must call the checkProxyAccess method
+  * to perform permission checks before calling this.
+  */
+ private static Class<?> getProxyClass0(ClassLoader loader,
+                                        Class<?>... interfaces) {
+     if (interfaces.length > 65535) {
+         throw new IllegalArgumentException("interface limit exceeded");
+     }
+
+     // If the proxy class defined by the given loader implementing
+     // the given interfaces exists, this will simply return the cached copy;
+     // otherwise, it will create the proxy class via the ProxyClassFactory
+     return proxyClassCache.get(loader, interfaces);
+ }
